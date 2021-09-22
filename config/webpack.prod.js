@@ -3,21 +3,10 @@ const merge = require('merge-descriptors');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const rulesForCss = {
-  test: /\.scss$/,   
+const rulesForHTML =   {
+  test:/\.html$/,
   use: [
-    MiniCssExtractPlugin.loader,
-    // 'style-loader',
-    'css-loader',
-    {
-      loader: "sass-loader",
-      options: {
-        sourceMap: false,
-        sassOptions: {
-          outputStyle: "compressed",
-        },
-      },
-    }
+    'html-loader'
   ]
 };
 
@@ -37,6 +26,24 @@ const rulesForFonts = {
   }
 };
 
+const rulesForCss = {
+  test: /\.scss$/,   
+  use: [
+    MiniCssExtractPlugin.loader,
+    // 'style-loader',
+    'css-loader',
+    {
+      loader: "sass-loader",
+      options: {
+        sourceMap: false,
+        sassOptions: {
+          outputStyle: "compressed",
+        },
+      },
+    }
+  ]
+};
+
 const rulesForJS = {
   test: /\.js$/,
   exclude: /node_modules/,
@@ -46,13 +53,15 @@ const rulesForJS = {
   }
 };
 
-const rules = [rulesForFonts, rulesForImg, rulesForCss, rulesForJS];
+
+const rules = [rulesForHTML, rulesForFonts, rulesForImg, rulesForCss, rulesForJS];
 
 const prodConfig = {
   mode: 'production',
   module: { rules },
   plugins: [
     new HtmlWebpackPlugin({
+      inject: 'body',
       template: './src/views/index.html',
     }),
     new MiniCssExtractPlugin({

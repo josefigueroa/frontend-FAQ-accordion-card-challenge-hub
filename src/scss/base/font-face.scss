@@ -2,10 +2,10 @@
 
 @each $key, $value in $theme-fonts {
   @font-face {
-    font-family: Poppins;
+    font-family: Kumbh Sans;
     src: 
-      local('Poppins #{$value}'), local('Poppins-#{$value}'),
-      url('#{$fonts-path}/poppins/Poppins-#{$value}.ttf') format('truetype');
+      local('Kumbh Sans #{$value}'), local('Kumbh Sans-#{$value}'),
+      url('#{$fonts-path}/KumbhSans/KumbhSans-#{$value}.ttf') format('truetype');
     font-style: normal;
     font-weight: #{$key};
     text-rendering: optimizeLegibility;

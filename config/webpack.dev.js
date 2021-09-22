@@ -7,8 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const rulesForCss = {
   test: /\.scss$/,   
   use: [
-    MiniCssExtractPlugin.loader,
-    // 'style-loader',
+    // MiniCssExtractPlugin.loader,
+    'style-loader',
     {
       loader: "css-loader",
       options: {
@@ -36,7 +36,23 @@ const rulesForJS = {
   }
 };
 
-const rules = [rulesForCss, rulesForJS];
+const rulesForImg = {
+  test: /\.(png|svg|jpg|jpeg|gif)$/i,
+  type: 'asset/resource',
+  generator: {
+    filename: 'img/[hash][ext][query]'
+  }
+};
+
+const rulesForFonts = {
+  test: /\.(woff|woff2|eot|ttf|otf)$/i,
+  type: 'asset/resource',
+  generator: {
+    filename: 'fonts/[hash][ext][query]'
+  }
+};
+
+const rules = [rulesForCss, rulesForJS, rulesForImg, rulesForFonts];
 
 
 const devConfig = {
@@ -63,9 +79,9 @@ const devConfig = {
     new HtmlWebpackPlugin({
       template: './src/views/index.html',
     }),
-    new MiniCssExtractPlugin({
-      filename: 'css/style.[contenthash].css'
-    })
+    // new MiniCssExtractPlugin({
+    //   filename: 'css/style.[contenthash].css'
+    // })
   ],
   devtool: 'eval-source-map'
 }

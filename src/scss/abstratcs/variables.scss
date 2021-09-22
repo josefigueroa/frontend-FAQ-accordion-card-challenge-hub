@@ -30,19 +30,34 @@ $spacer: (
   5: ($spacer * 3)
 );
 
+$blue: hsl(240, 73%, 65%);
+$violet: hsl(273, 75%, 66%);
+$red: hsl(14, 88%, 65%);
+$grayDark: hsl(237, 12%, 33%);
+$gray: hsl(240, 6%, 50%);
+$white: hsl(240, 5%, 91%);
+$dark: hsl(238, 29%, 16%);
+
+$theme-colors: (
+	'blue': $blue,
+	'violet': $violet,
+	'red': $red,
+	'grayDark': $grayDark,
+	'gray': $gray,
+	'white': $white,
+	'dark': $dark,
+);
+
 $theme-fonts: (
-	300: 'Light',
 	400: 'Regular',
-	500: 'Medium',
-	700: 'Bold',
-	900: 'Black'
+	700: 'Bold'
 );
 
 //BASE
-$font-family-base: Poppins;
-$font-size-base: 1rem;
-$font-weight-base: 400;
-$body-bg: #fff;
+$font-family-base: Kumbh Sans;
+$font-size-base: 12px;
+$font-weight-base: var(--font-Regular);
+$body-bg: linear-gradient(180deg, var(--violet) 0%,  var(--blue) 100%);
 
 //PATH
 $img-path: '../img';
