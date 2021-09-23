@@ -9,6 +9,48 @@
   <title>Frontend Mentor | FAQ Accordion Card</title>
 </head>
 <body>
- 
+  <main class="container container--centered">
+    <section class="card">
+     <figure class="card__box">
+       <img src="../img/illustration-box-desktop.svg"  width="145" height="110" alt="Card box">
+     </figure>     
+      <picture class="card__img">
+          <source srcset="../img/illustration-woman-online-desktop.svg" media="(min-width: 992px)">
+          <img src="../img/illustration-woman-online-mobile.svg" width="236" height="178" alt="Illustration woman online">
+      </picture>
+      <article class="card__wrap">
+        <h1 class="card__title">FAQ</h1>
+        <details class="collapse">
+          <summary class="collapse__title">How many team members can I invite?</summary>
+          <p class="collapse__desc">You can invite up to 2 additional users on the Free plan. There is no limit on 
+            team members for the Premium plan.</p>
+        </details>
+        <details class="collapse">
+          <summary class="collapse__title">What is the maximum file upload size?</summary>
+          <p class="collapse__desc">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </details>
+        <details class="collapse">
+          <summary class="collapse__title">How do I reset my password?</summary>
+          <p class="collapse__desc">
+            Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</p>
+        </details>
+        <details class="collapse">
+          <summary class="collapse__title">Can I cancel my subscription?</summary>
+          <p class="collapse__desc">Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </details>
+        <details class="collapse">
+          <summary class="collapse__title">Do you provide additional support?</summary>
+          <p class="collapse__desc">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </details>
+      </article>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" class="footer__links" target="_blank">Frontend Mentor.</a>
+      Coded by <a href="https://github.com/josefigueroa/frontend-FAQ-accordion-card-challenge-hub" class="footer__links">José Figueroa.</a>
+    </p>
+  </footer>
 </body>
 </html>

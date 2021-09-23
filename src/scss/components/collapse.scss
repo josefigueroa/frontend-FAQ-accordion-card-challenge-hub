@@ -1,0 +1,45 @@
+@use '../abstratcs/' as *;
+
+.collapse{
+  border-bottom: 1px solid var(--grayLight);
+  &__title{
+    padding: rem(15) 0;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include breakpoint('large'){
+      padding: rem(20) 0;
+      font-size: rem(14);
+    }
+    &:hover{
+      color: var(--red);
+    }
+    &::after{
+      content: '';
+      display: inline-block;
+      background-image: url('#{$img-path}/icon-arrow-down.svg');
+      width: rem(10);
+      height: rem(7);
+      background-repeat: no-repeat;
+      transition: .4s;
+    }
+  }
+  &[open]{
+    .collapse__title{
+      transition: .4s;
+      color: var(--black);
+      font-weight: var(--font-Bold);
+      &::after{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &__desc{
+    color: var(--gray);
+    animation: open .5s ease-in-out;
+    @include collapse-animate();
+    padding-bottom: rem(15);
+  }
+};

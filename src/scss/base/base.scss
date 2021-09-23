@@ -7,4 +7,9 @@ body{
   font-weight: $font-weight-base;
   background-repeat: no-repeat;
   min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 100%;
 }
+
