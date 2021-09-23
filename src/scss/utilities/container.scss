@@ -10,7 +10,7 @@
   &--centered{
     align-self: center;
     padding-top: rem(120);
-    padding-bottom: rem(106);
+    // padding-bottom: rem(106);
     @include breakpoint('large'){
       padding: 0;
     }
